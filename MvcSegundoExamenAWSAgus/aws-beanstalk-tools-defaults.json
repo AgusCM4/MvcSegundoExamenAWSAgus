@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Debug",
+    "framework"     : "net5.0",
+    "self-contained" : false,
+    "application"    : "MvcSegundoExamenAWSAgus",
+    "environment"    : "MvcSegundoExamenAWSAgus-prod",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-02fc77f9bd9e6fd04\";\"aws:ec2:vpc,Subnets\"=\"subnet-0ae06b43bb459d0a9\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.3.1 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "mvcsegundoexamenawsagus-prod",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "par-claves-aula-tajamar",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}

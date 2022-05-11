@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MvcSegundoExamenAWSAgus.Models.Evento>
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+<h1>Eventos</h1>
+
+<p>
+    <a class="btn btn-success" asp-controller="Concierto" asp-action="NuevoEvento">Nuevo Evento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCategoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCategoria)
+            </td>
+            <td>
+                <a class="btn btn-danger" asp-controller="Concierto" asp-action="EliminarEvento" asp-route-id="@item.IdEvento">Delete</a>
+                <a class="btn btn-secondary" asp-controller="Concierto" asp-action="CambiarCategoria" asp-route-id="@item.IdEvento">Cambiar Categoria</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

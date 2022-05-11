@@ -1,0 +1,28 @@
+﻿@model Evento
+
+@{ 
+    List<CategoriaEvento> categorias= (List<CategoriaEvento>) ViewData["CATEGORIAS"];
+    string nombrecateg = ViewData["NOMBRECATEGORIA"].ToString();
+}
+<h1>CAMBIAR CATEGORIA</h1>
+
+<h2>Evento</h2>
+<h3>ID: @Model.IdEvento</h3>
+<h3>NOMBRE: @Model.Nombre</h3>
+<h3>ARTISTA: @Model.Artista</h3>
+<h3>CATEGORIA ACTUAL: @nombrecateg</h3>
+<br />
+<h2>Cambiar Categoria</h2>
+<form method="post">
+    <label>Categoria</label>
+    <select class="form-control" name="categoria">
+        @foreach (CategoriaEvento cat in categorias)
+        {
+            <option value="@cat.IdCategoria">
+                @cat.Nombre
+            </option>
+        }
+    </select>
+    <input type="hidden" name="evento" value="@Model.IdEvento" />
+    <input type="submit" class="btn btn-success" />
+</form>
